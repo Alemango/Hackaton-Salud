@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.lateral {
+    width: 22%;
+    height: 100vh;
+    background-color: rosybrown;
+    text-align: center;
+}
+
+.lateral img {
+    width: 15%;
+}
+
+.lateral h1 {
+    display: inline;
+    margin: 0 auto;
+    font-size: 4vw;
+    color: antiquewhite;
+}
+
+.lateral a {
+    text-decoration: none;
+}
+
+.lateral form input{
+    width: 15vw;
+    border: 0.5vw antiquewhite;
+    height: 4vh;
+    outline: none;
+    text-align: center;
+    font-weight: bold;
+}
+
+.lateral h3 {
+    color: antiquewhite;
+    font-size: 1.25vw;
+}
+
+.lateral hr {
+    background-color: antiquewhite;
+    height: 2px;
+}
+
+.contenido {
+    height: 100vh;
+    width: 78%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.tipo div {
+    display: inline-block;
+}
+
+.nombre {
+    font-size: 0.8vw;
+    color: grey;
+}
+
+.nombre div {
+    display: inline-block;
+}
+
+.medTipo div {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 4px;
+    /* font-family: 'Press Start 2P', cursive; */
+    font-size: 1vw;
+}
+
+.imagen {
+    margin-top: 3.5vw;
+    margin-left: 5vw;
+}
+
+.imagen img {
+    width: 35vw;
+}
+
+.derecha {
+    margin-top: 14vw;
+    width: 40%;
+    margin-left: -2vw;
+    text-align: center;
+}
+
+.nombre {
+    /* font-family: 'Press Start 2P', cursive; */
+    font-size: 3vw;
+    color: black;
+    margin-top: -10vw;
+}
+
+.medInfo {
+    font-size: 4vh;
+}
+
+.infor {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.indi {
+    width: 50%;
+    margin-top: 4%;
+}

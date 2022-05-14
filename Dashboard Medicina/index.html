@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicamentos | EMMA</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="contenedor">
+        <div class="lateral">
+            <a href="#">
+                <img src="./assets/img/logop.png" alt="EMMA-Logo" class="logoMini">
+                <h1 class="titulo">EMMA</h1>
+            </a>
+            <br><hr><br>
+            <h3>¿Qué medicamento buscas?</h3>
+            <form action="" onsubmit="buscaMedicamento(event)">
+                <input medicamento type="text" name="medicina" autocomplete="off" placeholder="Presiona Enter para buscar">
+            </form>
+        </div>
+        <div dataMedicina class="contenido">
+            <div>
+                <div class="imagen">
+                    <img dataImagen src="./assets/img/logop.png" alt="Medicina">
+                </div>
+            </div>
+            <div class="derecha">
+                <div class="nombre">
+                    <div dataNombre class="nombre">Inicia tu Búsqueda</div>
+                    <div dataID></div>
+                </div>
+                <div class="tipo">
+                    <div dataTipo class="medTipo"></div>
+                </div>
+                <div informacion class="medInfo"></div>
+                <div class="infor">
+                    <div class="indi">
+                        <div indicacionesTitulo class="indTitle"></div>
+                        <div indicaciones class="indicaciones"></div>
+                    </div>
+                    <div class="indi">
+                        <div contraTitulo class="contraTitulo"></div>
+                        <div contra class="contra"></div>
+                    </div>
+                    <div class="indi">
+                        <div dosisTitulo class="dosisT"></div>
+                        <div dosis class="dosis"></div>
+                    </div>
+                    <div class="indi">
+                        <div interaccionesTitulo class="inT"></div>
+                        <div interacciones class="inter"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <script src="./script.js"></script>
+    </footer>
+</body>
+</html>
