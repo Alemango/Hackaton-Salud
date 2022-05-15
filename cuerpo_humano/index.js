@@ -3,6 +3,8 @@ const add = document.getElementById('add');
 const area = document.getElementById('area');
 const areas = document.getElementById('areas');
 // const malestar = document.getElementById('malestar');
+const diag =document.getElementById('diagnostico');
+
 window.onload = function () {
     agregarArea();
 }
@@ -41,14 +43,19 @@ function agregar() {
 };
 var arrayFinal = [];
 function obtenerDatos() {
-    let edad = document.getElementById("edad").value;
+    let edad = parseInt(document.getElementById("edad").value);
+    console.log(typeof (edad));
     let sexo = document.getElementById("sexo").value;
-    arrayFinal.push(edad);
+    let edadFinal = (`"age:"+{"value":edad}`);
+    arrayFinal.push(edadFinal);
     arrayFinal.push(sexo);
     arrayFinal.push(arrayMalestar);
-   // console.log(arrayFinal);
-    usuarioJson = JSON.stringify(arrayFinal);
-    console.log(usuarioJson)
+    var send = ("I have " +nuevoMalestar.tipoDolor+" in "+nuevoMalestar.zona);
+    console.log(send);
+    console.log(arrayFinal);
+   usuarioJson = JSON.stringify(arrayFinal);
+   document.getElementById('diagnostico').style.display="block";
+   //console.log(usuarioJson)
 
     //     $.ajax({
     //     data: JSON.stringify(arrayFinal),
@@ -67,17 +74,40 @@ function obtenerDatos() {
     fetch("https://api.infermedica.com/v3/parse", {
         method: "POST",
         mode:"cors",
-        credentials:{
-            "appId": "9a953412",
-            "appKey": "2bb6773e4623c98dcbc2e5e8c80927cd"
-        },
-        headers: { "Content-Type": "application/json" },
-        body: usuarioJson
+        
+        headers: { "Content-Type": "application/json",
+        "App-Id": "9a953412",
+        "App-Key": "2bb6773e4623c98dcbc2e5e8c80927cd"
+         },
+        body: JSON.stringify( {
+            "age": {
+              "value": 23,
+              "unit": "year"
+            },
+            "sex": sexo,
+            "text": "I have " +nuevoMalestar.tipoDolor+" in my "+nuevoMalestar.zona,
+            "context": [
+              "string"
+            ],
+            "include_tokens": true,
+            "correct_spelling": true,
+            "concept_types": [
+              "symptom"
+            ]
+          })
     })
         .then(response => response.json()
-            .then(json => console.log(json)));
+        .then(json => renderData(json)));
 
 }
+const renderData = data => {
+    diag.innerHTML = '';
+    const typeText =document.createElement("div");
+    typeText.textContent = data.mentions[0].name;
+    console.log(data)
+    diag.appendChild(typeText);
+}
+
 
 
 // function peticion() {

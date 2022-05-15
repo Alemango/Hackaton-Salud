@@ -195,6 +195,15 @@ form>div, .btn {
     color: #a5a5a5;
 }
 
+.diagnostico>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 1.5rem;
+} 
+
 #area #data {
     color: black;
 }
